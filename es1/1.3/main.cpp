@@ -14,7 +14,7 @@ int main (int argc, char *argv[]){
 
    double l=1., d=3.;                           //l=needle lenghth, d= distance between stripes (must be d>l)
    int hits=0;                                  //Number of times that the needle hits the stripe
-   double pi=0;                                //Pi estimation
+   double pi=0;                                 //Pi estimation
    double pi_sum=0., pi2_sum=0;
    ofstream results;
       results.open("piresults.out");            

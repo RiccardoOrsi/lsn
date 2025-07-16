@@ -20,8 +20,7 @@ int main ( int argc, char** argv ) {
    const int changes = 12; // Scambi totali
 
    Random rnd_base;
-   rnd_base.SetSeed();
-
+   Random_Initializer(rnd_base);
    // Genero le città sulla circonferenza unitaria e ne stampo le coordinate in un file di output
    vector<vector<double>> positions_circ = Generating_Cities_Circumference(rnd_base);
    Cities_Printer("cities_positions_circ.out", positions_circ);
@@ -77,6 +76,7 @@ int main ( int argc, char** argv ) {
    rnd.SaveSeed();
 
    MPI_Finalize();
+
 
    return 0;
 }

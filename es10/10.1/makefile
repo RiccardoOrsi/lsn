@@ -1,7 +1,6 @@
 
 CXX = mpicxx
 RND = ../../rnd_gen/
-NP = 4
 
 # Regola principale
 all: main.exe
@@ -25,4 +24,4 @@ clean:
 	rm *.o *.out *.exe
 
 run: main.exe
-	mpirun -np $(NP) ./main.exe
+	mpirun --use-hwthread-cpus -np 8 ./main.exe

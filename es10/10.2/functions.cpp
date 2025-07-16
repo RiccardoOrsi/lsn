@@ -22,6 +22,35 @@ void Cities_Reader(const string &path, vector<vector<double>> &positions) {
    file.close();
 };
 
+// Inizializza il generatore di numeri casuali
+void Random_Initializer(Random &rnd) {
+   int seed[4];
+   int cestino;
+   int p1, p2;
+   ifstream Primes("../../rnd_gen/Primes");
+   if (Primes.is_open()){
+      for (int i=0;i<10;i++) {
+         Primes >> cestino;
+         Primes >> cestino;
+      }
+      Primes >> p1 >> p2 ;
+   } else cerr << "PROBLEM: Unable to open Primes" << endl;
+   Primes.close();
+
+   ifstream input("../../rnd_gen/seed.in");
+   string property;
+   if (input.is_open()){
+      while ( !input.eof() ){
+         input >> property;
+         if( property == "RANDOMSEED" ){
+            input >> seed[0] >> seed[1] >> seed[2] >> seed[3];
+            rnd.SetRandom(seed,p1,p2);
+         }
+      }
+      input.close();
+   } else cerr << "PROBLEM: Unable to open seed.in" << endl;
+};
+
 // Inizializza il generatore di numeri casuali per ogni continente
 void Random_Initializer(Random &rnd, int &rank) {
    int seed[4];

@@ -22,6 +22,9 @@ const int changes = 100; // Scambi totali
 void Cities_Reader(const string &path, vector<vector<double>> &positions);
 
 // Inizializza il generatore di numeri casuali per ogni continente
+void Random_Initializer(Random &rnd);
+
+// Inizializza il generatore di numeri casuali per ogni continente
 void Random_Initializer(Random &rnd, int &rank);
 
 // Mischia in maniera casuale i cammini da scambiare tra i continenti

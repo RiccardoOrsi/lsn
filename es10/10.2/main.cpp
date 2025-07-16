@@ -1,4 +1,3 @@
-
 #include "functions.h"
 #include "mpi.h"
 
@@ -23,8 +22,8 @@ int main ( int argc, char** argv ) {
    const int exchange_time = 100; // Generazioni tra uno scambio e l'altro
    const int changes = 100; // Scambi totali
 
-   Random rnd_base;
-   rnd_base.SetSeed();
+   /*Random rnd_base;
+   Random_Initializer(rnd_base);*/
 
    // Inizializzo i vari core coi loro nomi
    int size, rank;

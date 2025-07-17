@@ -61,7 +61,7 @@ int main ( int argc, char** argv ) {
 
    if (rank == 0) {
       // Stampo il cammino in un file di output
-      Best_Path_Printer("best_path_100.out", paths_odd);
+      Best_Path_Printer("best_path_30.out", paths_odd);
    }
 
    rnd.SaveSeed();
